@@ -26,7 +26,8 @@ def blog():
         blogs = Blog.query.filter_by(id=blog_id)
         return render_template('blogpost.html', blogs=blogs)
     else:
-        blogs = Blog.query.all()    
+        blogs = Blog.query.all()
+        blogs = blogs[::-1]
         return render_template('blog.html',blogs=blogs)
 
 
